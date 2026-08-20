@@ -26,6 +26,8 @@ public class Main {
             System.out.println("4. Buscar por forma");
             System.out.println("5. Buscar por condicion");
             System.out.println("6. Buscar por evaluacion");
+            System.out.println("7. Agregar informacion a CSV");
+            System.out.println("8. Eliminar datos de CSV");
             System.out.println("0. Salir");
             System.out.print("Opcion: ");
 
@@ -70,17 +72,35 @@ public class Main {
                         for (Instrumento instrumento : form) {
                         System.out.println(instrumento.getName());
                     }
+                    break;
                     case 5:
                         sc.nextLine();
 
                         System.out.print("Condicion a buscar: ");
                         String condition = sc.nextLine();
 
-                        ArrayList<Instrumento> resultadoCondicion =ge.searchCondition(condition);
+                        ArrayList<Instrumento> resultadoCondicion = ge.searchCondition(condition);
 
                         for (Instrumento instrumento : resultadoCondicion) {
                         System.out.println(instrumento.getName());
                     }
+
+                    break;
+
+                    case 6:
+                        System.out.println("No implementado");
+
+                    break;
+
+
+                    case 7:
+                        System.out.println("No implementado");
+
+                    break;
+
+
+                    case 8:
+                        System.out.println("No implementado");
 
                     break;
 

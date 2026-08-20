@@ -11,6 +11,7 @@ public class Instrumento {
     private String condition;
     private ArrayList<String> authors;
     private boolean evaluated;
+    //Instrumento[] losInstrumentos;
 
     public Instrumento(int code, String name, String form,String type, String condition, ArrayList<String> authors,boolean evaluated){
         this.code= code;

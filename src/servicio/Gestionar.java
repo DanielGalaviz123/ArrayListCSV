@@ -7,6 +7,7 @@ public class Gestionar {
 
    private ArrayList<Instrumento> instrumentos; 
 
+
    public Gestionar(ArrayList<Instrumento> instrumentos){
     this.instrumentos=instrumentos;
    }
@@ -35,22 +36,34 @@ public class Gestionar {
    // buscar por forma
     public ArrayList<Instrumento> buscarForma(String form){
 
-        ArrayList<Instrumento> instrumentos= new ArrayList<>();
-
+        return new ArrayList<>(
         instrumentos.stream()
-            .filter(n->n.getForm().equals(form)).toList();
-            return instrumentos;
-
+            .filter(n->n.getForm().equals(form))
+            .toList()
+            
+        );
     }
 
    //buscar por condicion
     public ArrayList<Instrumento> searchCondition(String condition){
-        ArrayList<Instrumento> instrumentos= new ArrayList<>();
-        instrumentos.stream().filter(a->a.getCondition().equals(condition)).toList();
-        return instrumentos;
+        ArrayList<Instrumento> resultado = new ArrayList<>(
+        instrumentos.stream().filter(a->a.getCondition().equals(condition)).toList()
+        );
+        return resultado;
     }
 
     //buscar por evaluated
+
+
+    public boolean removeInstrument(int code) {
+
+        boolean eliminado = instrumentos
+        .removeIf(instrumento -> instrumento.getCode() == code);
+        return eliminado;
+    }
+
+    //hacer un metodo para aumentar la dimension del arreglo si se llego al limite de elementos almacenados
+    //la cantidad a aumentar es un 25% de la capacidad
    
     
 }
